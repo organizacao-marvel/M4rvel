@@ -1,47 +1,38 @@
 import { Card, CardContent, Typography, Button, CardActions } from '@mui/material';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface HeroTypes {
-  name: string
-  id: number
-  comics?: string
-  description?: string 
+    name: string;
+    id: number;
+    comics?: string;
+    description?: string;
 }
 
 export const HeroCard = ({ name, id, comics, description }: HeroTypes) => {
-
-  return (
-    <Card sx={ {
-      width: 400,
-      marginBottom: 4
-    } }>
-      <CardContent>
-        <Typography
-          variant="h5"
-          component="h1"
+    return (
+        <Card
+            sx={{
+                width: 200,
+                marginBottom: 4,
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center'
+            }}
         >
-          { name }
-        </Typography>
-        <Typography
-          variant="h5"
-          component="h1"
-        >
-          { id }
-        </Typography>
-        <Typography
-          variant="body1"
-          color="text.primary"
-        >
-          { comics }
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button 
-          variant="outlined" color="secondary" component={Link} to={`/heropage/${id}`}
-        >
-          View More!
-        </Button>
-      </CardActions>
-    </Card>
-  )
-}
+            <CardContent>
+                <Typography variant="h5" component="h1">
+                    {name}
+                </Typography>
+                <Typography variant="body1" color="text.primary">
+                    {comics}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button variant="outlined" color="secondary" component={Link} to={`/heropage/${id}`}>
+                    View More!
+                </Button>
+            </CardActions>
+        </Card>
+    );
+};
