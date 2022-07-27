@@ -20,7 +20,7 @@ export const SearchBar = ({ filteredHero, setFilteredHero }: {
           </InputAdornment>
         ),
       }}
-      variant="standard"
+      variant="outlined"
       />  
     </>
   )

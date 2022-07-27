@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button, CardActions } from "@mui/material";
 import { Link } from "react-router-dom";
+import LinkMaterial from "@mui/material/Link";
 
 export const CoderComponent = ({ name, languages, description, linkedIn }: {
   name: string 
@@ -37,13 +38,22 @@ export const CoderComponent = ({ name, languages, description, linkedIn }: {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          variant="outlined"
-          component={ Link }
-          to={ linkedIn }
+        <LinkMaterial
+          underline="none"
+          href={ linkedIn }
+          sx={{
+            padding: 1,
+            border: "1px solid #2196f3",
+            borderRadius: 2,
+            transition: "ease-in-out",
+            "&:hover": {
+              border: "1px solid #104b79",
+              borderRadius: 0
+            }
+          }}
         >
           Quer me ver? <span>😳</span>
-        </Button>
+        </LinkMaterial>
       </CardActions>
     </Card>
   )
