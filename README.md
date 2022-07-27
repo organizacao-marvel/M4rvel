@@ -14,6 +14,8 @@ git checkout nome_da_branch //redireciona para a branch escolhida.
 
 git push origin nome_da_branch //da um push para o github.
 
+git pull origin nome_da_branch //da um pull com o projeto atualizado no github
+
 logo após dar um push, entrar no github e criar o pull request.
 
 IMPORTANTE - NUNCA TRABAHAR NA BRANCH MASTER POIS QUALQUER PUSH FEITO NELA N SERA CRIADO UM PULL REQUEST E FARÁ A ALTERAÇÃO DIRETO, PODENDO CAUSAR PROBLEMAS NAS LINHAS DE CÓDIGO.
