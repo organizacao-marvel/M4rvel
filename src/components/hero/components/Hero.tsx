@@ -24,7 +24,7 @@ export const HeroPage = () => {
           alignItems='center'
           justifyContent='center'
           sx={{ marginTop: 4 }}
-          spacing={2}
+          spacing={3}
           flexDirection='column'
         >
           <SearchBar
