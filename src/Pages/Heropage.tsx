@@ -2,6 +2,7 @@ import { Grid, Typography, CardMedia, Card, CardContent, Box } from "@mui/materi
 import { RootState } from "../App/store";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Comics } from "../components/hero/Comics";
 
 export const Heropage = () => {
 
@@ -10,8 +11,10 @@ export const Heropage = () => {
 
   return (
     <Grid container display="flex" alignItems="center" justifyContent="center" sx={{marginTop: 4}}>
-      <Grid item width={550}>
-        <Card>
+      <Grid item width={660}>
+        <Card sx={{
+          boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
+        }}>
           { heroes.map((hero: any) => {
             if (Number(heroId) === hero.id) {
               return (
@@ -48,6 +51,23 @@ export const Heropage = () => {
                         </Typography>
                       ) }
                     </Typography>
+                    <Box>
+                      <Typography
+                        variant="body1"
+                        color="error"
+                        sx={{
+                          width: "100%",
+                          display: "flex",
+                          marginTop: 3
+                        }}
+                      >
+                        { hero.comics.items.map((comic: any, index: number) => {
+                          if (index >=0 && index < 4) {
+                            return <Comics comicsName={ comic.name } comicsURL={ comic.resourceURI } />
+                          }
+                        }) }
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </>
               );
