@@ -1,4 +1,4 @@
-import { Grid, Typography, Box, CardMedia, Card, CardContent } from "@mui/material";
+import { Grid, Typography, CardMedia, Card, CardContent, Box } from "@mui/material";
 import { RootState } from "../App/store";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -33,7 +33,20 @@ export const Heropage = () => {
                       variant="body1"
                       color="text.primary"
                     >
-                      { hero.description }
+                      { hero.description === "" && (
+                        <Typography
+                          variant="h5"
+                          color="error"
+                        >
+                          Herói ainda não encontrado pela Field!
+                        </Typography>
+                      ) }
+
+                      { hero.description !== "" && (
+                        <Typography>
+                          { hero.description }
+                        </Typography>
+                      ) }
                     </Typography>
                   </CardContent>
                 </>

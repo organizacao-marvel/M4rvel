@@ -8,7 +8,7 @@ interface HeroTypes {
   description?: string 
 }
 
-export const HeroCard = ({ name, id, comics, description }: HeroTypes) => {
+export const HeroCard = ({ name, id, comics }: HeroTypes) => {
 
   return (
     <Card sx={ {
